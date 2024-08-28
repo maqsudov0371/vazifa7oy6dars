@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+</head>
+<body>
+    <h1>Header</h1>
+    {% for header in headers %}
+        <div>
+            <h2>{{ header.message }}</h2>
+            <p>Facebook: {{ header.facebook }}</p>
+            <p>Twitter: {{ header.twitter }}</p>
+            <p>Youtube: {{ header.youtube }}</p>
+            <p>LinkedIn: {{ header.linkedin }}</p>
+            <img src="{{ header.logo.url }}" alt="Logo">
+            <p>Address: {{ header.address }}</p>
+            <p>Phone1: {{ header.phone1 }}</p>
+            <p>Phone2: {{ header.phone2 }}</p>
+            <p>Email1: {{ header.email1 }}</p>
+            <p>Email2: {{ header.email2 }}</p>
+        </div>
+    {% endfor %}
+    <h1>Header Images</h1>
+    {% for header_image in header_images %}
+        <div>
+            <h2>{{ header_image.service }}</h2>
+            <p>{{ header_image.content }}</p>
+            <img src="{{ header_image.image.url }}" alt="Service Image">
+        </div>
+    {% endfor %}
+</body>
+</html>
